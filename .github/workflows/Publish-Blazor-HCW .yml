@@ -65,11 +65,11 @@ jobs:
       run: |
         dotnet publish HardCopperWood.csproj -c Release -o published
 
-    - name: Rewrite base href
-      uses: SteveSandersonMS/ghaction-rewrite-base-href@v1.1.0
-      with:
-        html_path: ${{ env.GITHUB_WORKSPACE }}/index.html
-        base_href: /HardCopperWood/
+    # - name: Rewrite base href
+    #   uses: SteveSandersonMS/ghaction-rewrite-base-href@v1.1.0
+    #   with:
+    #     html_path: ${{ env.GITHUB_WORKSPACE }}/index.html
+    #     base_href: /HardCopperWood/
         
     - name: Setup Pages
       uses: actions/configure-pages@v5.0.0
