@@ -69,7 +69,7 @@ jobs:
       uses: SteveSandersonMS/ghaction-rewrite-base-href@v1.1.0
       with:
         html_path: ${{ env.PUBLISH_DIR }}/index.html
-        base_href: /blazor-samples/
+        base_href: /HardCopperWood/
         
     - name: Setup Pages
       uses: actions/configure-pages@v5.0.0
