@@ -1,7 +1,7 @@
 # Simple workflow for deploying static content to GitHub Pages
 name: Publish Blazor App to GitHub Pages
-env:
-  PUBLISH_DIR: HardCopperWood/bin/Release/net10.0/publish/wwwroot
+# env:
+ #  PUBLISH_DIR: HardCopperWood/bin/Release/net10.0/publish/wwwroot
 
 on:
   # Runs on pushes targeting the default branch
@@ -68,7 +68,7 @@ jobs:
     - name: Rewrite base href
       uses: SteveSandersonMS/ghaction-rewrite-base-href@v1.1.0
       with:
-        html_path: ${{ env.PUBLISH_DIR }}/index.html
+        html_path: ${{ env.GITHUB_WORKSPACE }}/index.html
         base_href: /HardCopperWood/
         
     - name: Setup Pages
