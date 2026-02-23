@@ -65,6 +65,15 @@ jobs:
       run: |
         dotnet publish HardCopperWood.csproj -c Release -o published
 
+    - name: Rewrite base href
+      uses: SteveSandersonMS/ghaction-rewrite-base-href@v1.1.0
+      with:
+        html_path: ${{ env.PUBLISH_DIR }}/index.html
+        base_href: /blazor-samples/
+        
+    - name: Setup Pages
+      uses: actions/configure-pages@v5.0.0
+
     - name: Upload artifact for web
       uses: actions/upload-pages-artifact@v4
       with:
