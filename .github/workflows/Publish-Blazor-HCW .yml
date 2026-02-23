@@ -56,9 +56,9 @@ jobs:
       run: |
         dotnet test . -c Release
 
-    - name: List files
-      run: ls -R
-      working-directory: ${{ env.GITHUB_WORKSPACE }}
+    # - name: List files
+    #   run: ls -R
+    #   working-directory: ${{ env.GITHUB_WORKSPACE }}
 
     - name: Publish artifact
       shell: bash
