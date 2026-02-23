@@ -56,10 +56,14 @@ jobs:
       run: |
         dotnet test . -c Release
 
+    - name: List files
+      run: ls -R
+      working-directory: ${{ env.GITHUB_WORKSPACE }}
+
     - name: Publish artifact
       shell: bash
       run: |
-        dotnet publish ${{ env.GITHUB_WORKSPACE }}/src/HardCopperWood/HardCopperWood.csproj -c Release -o published
+        dotnet publish HardCopperWood.csproj -c Release -o published
 
     - name: Upload artifact for web
       uses: actions/upload-pages-artifact@v4
